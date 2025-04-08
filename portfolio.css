@@ -93,7 +93,6 @@ nav ul li a:hover {
     padding-right: 50px;
 }
 
-/* Thay thế phần .hero-content h1 trong file css/style.css */
 .hero-content h1 {
     font-size: clamp(1.8rem, 6vw, 3rem); /* Sử dụng clamp() cho responsive */
     line-height: 1.3;
