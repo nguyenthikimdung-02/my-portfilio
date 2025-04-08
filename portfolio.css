@@ -93,13 +93,41 @@ nav ul li a:hover {
     padding-right: 50px;
 }
 
+/* Thay thế phần .hero-content h1 trong file css/style.css */
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 6vw, 3rem); /* Sử dụng clamp() cho responsive */
+    line-height: 1.3;
     margin-bottom: 15px;
+    margin-top: 15px;
+    white-space: normal; /* Cho phép xuống dòng tự nhiên */
 }
 
 .hero-content h1 span {
     color: var(--primary-color);
+    font-size: inherit; /* Kế thừa kích thước từ thẻ h1 */
+    display: inline; /* Giữ nguyên flow của text */
+}
+
+/* Thêm media query đặc biệt */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 7vw, 2.2rem); /* Điều chỉnh cho tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: clamp(1.3rem, 6vw, 1.8rem); /* Điều chỉnh cho mobile */
+        word-break: keep-all; /* Ngăn ngắt từ tiếng Việt */
+    }
+    
+    .hero .container {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        padding: 0 20px; /* Thêm padding hai bên */
+    }
 }
 
 .hero-content h2 {
@@ -129,6 +157,7 @@ nav ul li a:hover {
     height: 350px;
     object-fit: cover;
 }
+
 
 /* Section chung */
 .section-title {
